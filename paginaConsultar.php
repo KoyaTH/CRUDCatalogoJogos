@@ -19,7 +19,17 @@
 </head>
 <body>
     <button><a href="index.php">Menu</a></button> <br>
-    <h3>Lista de Jogo cadastrado</h3>
+
+    <h3>Consultar Jogo</h3>
+    <form action="consultarum.php" method="post">
+        <label for="codigo">Codigo</label><br><br>
+        <input type="int" name="codigo" required>
+        <br><br>
+        <button type="submit">Consultar</button>
+    </form>
+
+
+    <h3>Lista de Jogos Cadastrados</h3>
     <?php if($resultado->num_rows > 0) : ?>
         <table border="1" cellpading="5" cellspacing="0">
             <tr>
