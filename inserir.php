@@ -2,6 +2,11 @@
   
   require 'conexao.php';
 
+  if(!isset($conexao)){
+    die("Erro ao conectar no banco de dados");
+  }
+
+
   $nome = $_POST["nome"];
   $genero = $_POST["genero"];
   $lancamento = $_POST["lancamento"];
