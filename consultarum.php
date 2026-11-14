@@ -4,13 +4,17 @@
     if(!isset($conexao)){
         die("Erro ao conectar no banco de dados");
     }
+    
+    $codigo = $_POST['codigo'];
+    
+    $sql = "SELECT * FROM prateleira where codigo = $codigo;";
+    $stm = $conexao->prepare($sql);
 
-    $sql = "SELECT * FROM prateleira where codigo = $_POST['codigo'];";
     $resultado = mysqli_query($conexao, $sql);
  
 ?>
-
-<h3>Lista de Jogos Cadastrados</h3>
+  
+<h3>Jogo Consultado:</h3>
 
 <?php if($resultado->num_rows > 0) : ?>
     <table border="1" cellpading="5" cellspacing="0">
@@ -30,8 +34,12 @@
                 <td><?php echo $linha["desenvolvedora"]?></td>
             </tr>
             <?php endwhile; ?>
+            
     </table>
-
+        <?php
+        echo '<button><a href="paginaConsultar.php">Voltar para a Tela de Consulta</a></button> <br>';
+        ?>
     <?php else: ?>
-        <p>Nenhum Jogo cadastrado!</p>
+        <p>Jogo não encontrando</p>
+        <button><a href="paginaConsultar.php">Voltar para a Tela de Consulta</a></button> <br>
     <?php endif;?>

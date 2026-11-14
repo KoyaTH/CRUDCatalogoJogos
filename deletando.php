@@ -11,11 +11,16 @@
     $stm = $conexao->prepare($sql);
     $stm->bind_param("i", $codigo);
 
-    if($stm->execute()){
-        echo "Jogo Deletado com sucesso <br>";
-    }else{
-        echo "Erro ao cadastrar aluno <br>";
+    if ($stm->execute()) {
+        if ($stm->affected_rows > 0) {
+            echo "Jogo deletado com sucesso <br>";
+        } else {
+            echo "Jogo não encontrado <br>";
+        }
+    } else {
+        echo "Erro ao deletar jogo <br>";
     }
+    
     echo '<button><a href="index.php">Menu</a></button> <br>';
     echo '<button><a href="paginaDeletar.php">Voltar para a Tela de Deletar</a></button> <br>';
     echo '<button><a href="paginaConsultar.php">Voltar para a Tela de Consulta</a></button> <br>';

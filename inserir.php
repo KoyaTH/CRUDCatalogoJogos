@@ -10,7 +10,7 @@
   $nome = $_POST["nome"];
   $genero = $_POST["genero"];
   $lancamento = $_POST["lancamento"];
-  $desenvolvedor = $_POST["desenvolvedora"];
+  $desenvolvedora = $_POST["desenvolvedora"];
 
   $sql = "INSERT INTO PRATELEIRA (NOME, GENERO, LANCAMENTO, DESENVOLVEDORA) VALUES (?, ?, ?, ?);";
 

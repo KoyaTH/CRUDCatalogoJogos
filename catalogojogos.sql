@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `catalogojogos`
+-- Banco de dados: `CatalogoDeJogos`
 --
 
 -- --------------------------------------------------------
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 Create database CatalogoDeJogos;
 Use CatalogoDeJogos;
+
 CREATE TABLE `prateleira` (
   `codigo` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL,
