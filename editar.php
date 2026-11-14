@@ -92,6 +92,7 @@ if ($resultado->num_rows > 0) {
     <br><br>
 
     <button type="submit">Salvar alterações</button>
-
+    <button><a href="index.php">Voltar</a></button>
+    
 </form>
 
