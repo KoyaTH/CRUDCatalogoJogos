@@ -12,11 +12,11 @@
   $lancamento = $_POST["lancamento"];
   $desenvolvedora = $_POST["desenvolvedora"];
 
-  $sql = "INSERT INTO PRATELEIRA (NOME, GENERO, LANCAMENTO, DESENVOLVEDORA) VALUES (?, ?, ?, ?);";
+  $sql = "insert into prateleira (nome, genero, lancamento, desenvolvedora) values (?, ?, ?, ?);";
 
   $stm = $conexao->prepare($sql);
 
-  $stm->bind_param("ssds", $nome, $genero, $lancamento, $desenvolvedora);
+  $stm->bind_param("ssss", $nome, $genero, $lancamento, $desenvolvedora);
 
   if($stm->execute())
     echo "Jogo cadastrado com sucesso!";
