@@ -82,7 +82,7 @@ if ($resultado->num_rows > 0) {
     <br><br>
 
     <label>Lançamento:</label>
-    <input type="text" name="lancamento"
+    <input type="date" name="lancamento"
            value="<?php echo htmlspecialchars($jogo['lancamento']); ?>" required>
     <br><br>
 
